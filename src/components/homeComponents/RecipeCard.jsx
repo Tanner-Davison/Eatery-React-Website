@@ -1,47 +1,71 @@
 import styled from 'styled-components';
-import steak from "../../assets/steak.jpg"
+import steaks from '../../assets/steaks.jpeg'
+import martini from "../../assets/martini.jpg";
+import cake from "../../assets/cake.jpg";
 
 const RecipeCard = () => {
-    return (
+	return (
+		<RecipeWrapper>
 			<RecipeCardStyled>
-				<h1>Flaming J'on</h1>
 				<img
-					src={`${steak}`}
-                alt={'nice juicy steak'}
-                style={{width:'200px',height:'200px'}}
-            />
-            <button>See More</button>
+					src={`${cake}`}
+					alt={"excellent chocalate cake"}
+					style={{ width: "250px", height: "250px" }}
+				/>
+				<h2>Chocolate Cake</h2>
+				<button>See More</button>
 			</RecipeCardStyled>
-		);
+			<RecipeCardStyled>
+				<img
+					src={`${steaks}`}
+					alt={"nice juicy steak"}
+					style={{ width: "250px", height: "250px" }}
+				/>
+				<h2>Filet mignon</h2>
+				<button>See More</button>
+			</RecipeCardStyled>
+			<RecipeCardStyled>
+				<img
+					src={`${martini}`}
+					alt={"crisp dirty martini"}
+					style={{ width: "250px", height: "250px" }}
+				/>
+				<h2>Dirty Martini</h2>
+				<button>See More</button>
+			</RecipeCardStyled>
+		</RecipeWrapper>
+	);
 }
 
 export default RecipeCard;
 
 const RecipeCardStyled = styled.div`
-position: relative;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	font-family: "Poppins", sans-serif;
 	align-items: center;
 	justify-content: center;
-	width:200px;
-	height:300px;
-	border-bottom:10px inset black;
-	img{
-		border-radius:25px;
-		border: 4px solid black
+	width: 250px;
+	height: 350px;
+	margin:20px;
+	gap:4px;
+	
+
+	img {
+		border-radius: 5px;
 	}
-	h1 {
+	h2 {
 		font-family: "Poppins", sans-serif;
-        font-size: 25px;
-        
+		font-size: 25px;
+		
 	}
 	button {
 		font-family: "Varela Round", sans-serif;
-		background-color: transparent;
+		background-color: darkcyan;
 		border: 2px solid black;
-		border-radius: 15px;
-		color: black;
+		border-radius: 6px;
+		color: white;
 		cursor: pointer;
 		position: relative;
 		display: flex;
@@ -60,7 +84,7 @@ position: relative;
 		transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
 		user-select: none;
 		touch-action: manipulation;
-		width: 100%;
+		width: 65%;
 		will-change: transform;
 	}
 
@@ -70,7 +94,7 @@ position: relative;
 
 	button:hover {
 		color: #fff;
-		background-color: #1a1a1a;
+		background-color: #49796b;
 		box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
 		transform: translateY(-2px);
 	}
@@ -79,4 +103,17 @@ position: relative;
 		box-shadow: none;
 		transform: translateY(0);
 	}
+`;
+const RecipeWrapper = styled.div`
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	
+	justify-content: center;
+	height: 450px;
+
+	gap: 8%;
+	overflow: scroll;
+	scroll-behavior: smooth;
+	overflow-y:scroll;
 `;
